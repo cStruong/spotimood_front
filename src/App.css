@@ -43,6 +43,25 @@ body {background-color: white;}
   margin-right: 15px;
 }
 
+.songcard {
+  width: 65%;
+  height: 200px;
+  float: right;
+}
+
+.songform {
+  background-color: gray;
+  float: left;
+  height: 400px;
+  width: 25%;
+  margin-left: 15px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.searchform {
+  text-align: center;
+}
 /* Clear floats after the columns */
 /* .row:after {
   content: "";
