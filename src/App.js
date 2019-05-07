@@ -13,7 +13,7 @@ class App extends React.Component {
   }
 
   onHandleClick = (themeId) => {
-    
+
     this.setState({
       id: themeId
     })

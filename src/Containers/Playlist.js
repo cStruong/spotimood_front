@@ -10,20 +10,25 @@ class Playlist extends React.Component {
       theme: {}
     }
 
+    themeId = () => {
+      return parseInt(document.URL.split("/").pop())
+    }
+
     componentDidMount(){
-    fetch(`localhost:3005/playlists`)
+    fetch("http://localhost:3005/playlists")
     .then((response) => {
       return response.json()
     })
     .then((playlistObjs) => {
       playlistObjs.map(playlist => {
-      if(playlist.theme_id === this.props.id){
+      if(playlist.theme_id === this.themeId()){
         let song = playlist.song
         this.setState({
           songs: [song,...this.state.songs],
           filteredSongs: [song,...this.state.filteredSongs],
           theme: playlist.theme
         })
+
       }})
     })
     }
@@ -31,7 +36,8 @@ class Playlist extends React.Component {
     handleSubmit = (event, song) => {
       event.preventDefault()
       this.setState({
-        songs: [song,...this.state.songs]
+        songs: [song,...this.state.songs],
+        filteredSongs: [song,...this.state.filteredSongs]
       })
       fetch("http://localhost:3005/playlists", {
         method: 'POST',
@@ -61,10 +67,12 @@ class Playlist extends React.Component {
     this.setState({
       filteredSongs: searchArray
     })
+
   }
     render() {
         return (
             <div>
+              <h1>PlayList</h1>
               <SongForm handleSubmit={this.handleSubmit}/>
               <SongSearch handleChange={this.handleChange} />
               <PlaylistContainer mood={this.state.theme.mood} genre={this.state.theme.genre} songs={this.state.filteredSongs}/>
