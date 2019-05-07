@@ -12,12 +12,11 @@ class App extends React.Component {
     return (
       <div>
         <div className="header">
-          HEADER/LOGO BAR THING FOR LOGIN AND STUFF
         </div>
 
         <Switch>
           <Route path="/home" component={Home} />
-          <Route path="/users/:id" component={Playlist} />
+          <Route path="/themes/:id" render={(routerProps) => (<Playlist id={this.state.id}/>)} />
         </Switch>
 
       </div>
