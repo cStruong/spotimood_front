@@ -1,10 +1,12 @@
 import React from 'react'
 import SongForm from './SongForm.js'
 import PlaylistContainer from './PlaylistContainer'
+import SongSearch from './SongSearch'
 
 class Playlist extends React.Component {
     state = {
       songs: [],
+      filteredSongs: [],
       theme: {}
     }
 
@@ -19,9 +21,10 @@ class Playlist extends React.Component {
         let song = playlist.song
         this.setState({
           songs: [song,...this.state.songs],
+          filteredSongs: [song,...this.state.filteredSongs],
           theme: playlist.theme
         })
-      } })
+      }})
     })
     }
 
@@ -38,15 +41,33 @@ class Playlist extends React.Component {
         },
         body: JSON.stringify({
 
+          theme_id: this.state.theme.id,
+          theme: this.state.theme,
+          song: song
         })
       })
     }
 
+
+  handleChange = (event) => {
+    let userSearch = event.target.value.toLowerCase()
+    let searchArray = []
+    let songList = [...this.state.songs]
+    songList.map(song => {
+      if(song.title.toLowerCase().includes(userSearch)){
+        searchArray.push(song)
+      }
+    })
+    this.setState({
+      filteredSongs: searchArray
+    })
+  }
     render() {
         return (
             <div>
               <SongForm handleSubmit={this.handleSubmit}/>
-              <PlaylistContainer mood={this.state.theme.mood} genre={this.state.theme.genre} songs={this.state.songs}/>
+              <SongSearch handleChange={this.handleChange} />
+              <PlaylistContainer mood={this.state.theme.mood} genre={this.state.theme.genre} songs={this.state.filteredSongs}/>
             </div>
         )
     }
