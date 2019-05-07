@@ -8,6 +8,10 @@ import Playlist from './Containers/Playlist.js'
 
 class App extends React.Component {
 
+  state = {
+    id: 0
+  }
+
   render() {
     return (
       <div>
@@ -16,7 +20,8 @@ class App extends React.Component {
 
         <Switch>
           <Route path="/home" component={Home} />
-          <Route path="/themes/:id" render={(routerProps) => (<Playlist id={this.state.id}/>)} />
+          <Route path="/themes/:id" render={(routerProps) => (<Playlist id={this.state.id}/>)}
+          />
         </Switch>
 
       </div>
