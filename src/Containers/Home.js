@@ -20,7 +20,7 @@ class Home extends React.Component {
                 this.setState({
                     themes: themeJSON
                 })
-            }) 
+            })
 
         fetch("http://localhost:3005/songs")
         .then(response => {
@@ -55,14 +55,14 @@ class Home extends React.Component {
                     themes: newThemes
                 })
 
-                let filteredSongs = this.state.allSongs.filter(songObj => 
+                let filteredSongs = this.state.allSongs.filter(songObj =>
                     songObj.mood.includes(stateObj.mood) && songObj.genre.includes(stateObj.genre)
                 )
-        
+
                 this.setState({
                     songs: filteredSongs
                 })
-        
+
                 filteredSongs.forEach(songObj => {
                     let songid = songObj.id
                     fetch("http://localhost:3005/playlists", {
@@ -77,19 +77,19 @@ class Home extends React.Component {
                         })
                     })
                 })
-            }) 
+            })
     }
 
     render() {
         return (
             <div>
                 <div>
-                    THEMELIST CONTAINER
+
                     <Themelist onHandleClick={this.props.onHandleClick} themes={this.state.themes}/>
                 </div>
 
-                <div> 
-                    NEW THEME CONTAINER
+                <div>
+            
                     <NewThemeForm onSubmitHandler={this.onSubmitHandler}/>
                 </div>
             </div>

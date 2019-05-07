@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {compile} from 'path-to-regexp'
 
 const ThemeCard = (props) => {
     return (

@@ -5,7 +5,8 @@ import ThemeCard from './ThemeCard.js'
 const Themelist = (props) => {
     return (
         <div className="appcolumn left">
-        {props.themes.map(themeObj => 
+        <h1>Playlists:</h1>
+        {props.themes.map(themeObj =>
             <ThemeCard onHandleClick={props.onHandleClick} themeObj={themeObj}/>
          )
         }

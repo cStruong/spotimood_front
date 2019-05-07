@@ -1,4 +1,4 @@
-body {background-color: white;}
+body {background-color: black;}
 
 .header {
   padding: 10x;
@@ -17,6 +17,7 @@ body {background-color: white;}
 
 }
 
+
 .profilepic {
   background-color: white;
   height: 250px;
@@ -28,19 +29,30 @@ body {background-color: white;}
 .appcolumn {
   padding: 10px;
   box-sizing: border-box;
-  background-color: gray;
+  background-color: #232b2b;
+  color: white;
 }
 
 .left {
   float: left;
   width: 30%;
   margin-left: 15px;
+  color: white;
+}
+
+h1 {
+  color: white;
 }
 
 .right {
   float: right;
   width: 65%;
   margin-right: 15px;
+  color: white;
+}
+
+.themeform {
+  color: white
 }
 
 /* Clear floats after the columns */
