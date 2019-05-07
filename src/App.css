@@ -4,9 +4,17 @@ body {background-color: black;}
   padding: 10x;
   text-align: center;
   height: 80px;
-  background: #1abc9c;
+  background: black;
+  background-image: url("./assets/logoresize.gif");
+  background-repeat: no-repeat;
+  background-position: left;
   color: white;
   margin: 15px;
+}
+
+.themecard {
+  background-color: white;
+  
 }
 
 .profilepic {

@@ -16,7 +16,6 @@ class App extends React.Component {
     return (
       <div>
         <div className="header">
-          HEADER/LOGO BAR THING FOR LOGIN AND STUFF
         </div>
 
         <Switch>
