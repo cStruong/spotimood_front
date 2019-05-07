@@ -33,17 +33,64 @@ class Home extends React.Component {
         })
     }
 
+    onSubmitHandler = (event, stateObj) => {
+        event.preventDefault();
+
+        fetch("http://localhost:3005/themes", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(
+                stateObj
+            )
+        })
+            .then(response => {
+                return response.json();
+            })
+            .then(parsedTheme => {
+                let newThemes = [parsedTheme,...this.state.themes]
+                this.setState({
+                    themes: newThemes
+                })
+
+                let filteredSongs = this.state.allSongs.filter(songObj => 
+                    songObj.mood.includes(stateObj.mood) && songObj.genre.includes(stateObj.genre)
+                )
+        
+                this.setState({
+                    songs: filteredSongs
+                })
+        
+                filteredSongs.forEach(songObj => {
+                    let songid = songObj.id
+                    fetch("http://localhost:3005/playlists", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                        },
+                        body: JSON.stringify({
+                            theme_id: parsedTheme.id,
+                            song_id: songid
+                        })
+                    })
+                })
+            }) 
+    }
+
     render() {
         return (
             <div>
                 <div>
                     THEMELIST CONTAINER
-                    <Themelist themes={this.state.themes}/>
+                    <Themelist onHandleClick={this.props.onHandleClick} themes={this.state.themes}/>
                 </div>
 
                 <div> 
                     NEW THEME CONTAINER
-                    <NewThemeForm />
+                    <NewThemeForm onSubmitHandler={this.onSubmitHandler}/>
                 </div>
             </div>
         )

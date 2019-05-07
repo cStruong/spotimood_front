@@ -40,6 +40,7 @@ class Playlist extends React.Component {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
+
           theme_id: this.state.theme.id,
           theme: this.state.theme,
           song: song

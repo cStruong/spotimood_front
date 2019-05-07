@@ -12,6 +12,13 @@ class App extends React.Component {
     id: 0
   }
 
+  onHandleClick = (themeId) => {
+    
+    this.setState({
+      id: themeId
+    })
+  }
+
   render() {
     return (
       <div>
@@ -19,7 +26,7 @@ class App extends React.Component {
         </div>
 
         <Switch>
-          <Route path="/home" component={Home} />
+          <Route path="/home" render={(routerProps) => (<Home onHandleClick={this.onHandleClick} />)} />
           <Route path="/themes/:id" render={(routerProps) => (<Playlist id={this.state.id}/>)}
           />
         </Switch>
