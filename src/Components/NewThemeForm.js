@@ -8,59 +8,22 @@ class NewThemeForm extends React.Component {
         genre: ""
     }
 
-    componentDidMount() {
-        fetch("http://localhost:3005/songs")
-            .then(response => {
-                return response.json();
-            })
-            .then(parsedSongs => {
-                this.setState({
-                    allSongs: parsedSongs
-                })
-            })
-    }
-
     onChangeHandler = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
 
-    onSubmitHandler = (event) => {
-        event.preventDefault();
-
-        fetch("http://localhost:3005/themes", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify({
-                title: this.state.title,
-                mood: this.state.mood,
-                genre: this.state.genre
-            })
-        })
-            .then(response => {
-                return response.json();
-            })
-            .then(parsedTheme => {
-                console.log(parsedTheme)
-                console.log(parsedTheme.id)
-            }) 
-    }
-
-
-
     render() {
         return (
             <div>
                 Create a New Form:
-                <form onSubmit={this.onSubmitHandler}>
+                <form onSubmit={(event) => {this.props.onSubmitHandler(event, this.state)}}>
                     <label>Title:</label>
-                    <input onChange={this.onChangeHandler} type="textfield" name="title"/>
+                    <input onChange={this.onChangeHandler} type="textfield" name="title" value={this.state.title}/>
                     <label>Mood:</label>
-                    <select onChange={this.onChangeHandler} name="mood">
+                    <select onChange={this.onChangeHandler} name="mood" value={this.state.mood}>
+                        <option>Choose a Mood</option>
                         <option value="Happy">Happy</option>
                         <option value="Sad">Sad</option>
                         <option value="Lit">Lit</option>
@@ -68,7 +31,8 @@ class NewThemeForm extends React.Component {
                         <option value="Relaxed">Relaxed</option>
                     </select>
                     <label>Genre:</label>
-                    <select onChange={this.onChangeHandler} name="genre">
+                    <select onChange={this.onChangeHandler} name="genre" value={this.state.genre}>
+                        <option>Choose a Genre</option>
                         <option value="Country">Country</option>
                         <option value="Hip hop">Hip hop</option>
                         <option value="Pop">Pop</option>

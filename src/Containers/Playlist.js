@@ -37,7 +37,7 @@ class Playlist extends React.Component {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          theme
+
         })
       })
     }

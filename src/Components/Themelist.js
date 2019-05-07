@@ -6,7 +6,7 @@ const Themelist = (props) => {
     return (
         <div className="appcolumn left">
         {props.themes.map(themeObj => 
-            <ThemeCard themeObj={themeObj}/>
+            <ThemeCard onHandleClick={props.onHandleClick} themeObj={themeObj}/>
          )
         }
         </div>
