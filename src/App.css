@@ -21,142 +21,6 @@ body {background-color: black;}
   float: left;
 } */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .column {
   float: left;
   padding: 10px;
@@ -239,22 +103,55 @@ label {
 }
 
 .songcard {
+  margin-top: 10px;
+  margin-left: 100px;
   width: 65%;
   height: 200px;
-  float: right;
+  color: white;
+  background-color: rgba(128, 128, 136, 0.068);
+  border-radius: 25px; 
+}
+
+.cardinfo {
+  padding-left: 50px;
+  padding-top: 40px;
+  float: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.videos {
+  float: left;
+  padding-left: 25%;
+  padding-top: 1.5%;
+  position: absolute;
 }
 
 .songform {
-  background-color: gray;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 15px;
+  background-color: black;
   float: left;
-  height: 400px;
+  height: 550px;
   width: 25%;
   margin-left: 15px;
   text-align: center;
+  color: #1ED760;
+  font-size: 32px;
+  font-weight: bolder;
+  margin-top: 5%;
+}
+
+.songformitems {
   font-family: 'Montserrat', sans-serif;
+  color: #1ED760;
+  text-align: center;
+  font-size: 15px;
 }
 
 .searchform {
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
 }
 
@@ -290,9 +187,48 @@ li a:hover {
   font-size: 40px;
   background: rgba(34, 73, 72, 0.59);
 }
-/* Clear floats after the columns */
-/* .row:after {
-  content: "";
-  display: table;
-  clear: both;
-} */
+.button {
+  background-color: #1ED760;
+  border-radius: 100px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-color: #1ED760;
+  font-size: 14px;
+}
+
+.button:hover {
+  border-color: white;
+  background-color: white;
+  color: #1ED760;
+}
+
+.playlisttitle {
+  margin-top: 15px;
+  height: 130px;
+  background-color: rgba(128, 128, 136, 0.301);
+  font-size: 16px;
+  text-align: left;
+  width: 65%;
+  margin-left: 100px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 25px;
+}
+
+.cdimage{
+  padding-left: 45px;
+  padding-top: 2px;
+}
+
+.playlistcontainer {
+  margin-top: 1%;
+  background: transparent;
+  float: right;
+  width: 71%;
+  margin-right: 35px;
+  
+}
+
