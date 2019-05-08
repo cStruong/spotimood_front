@@ -1,14 +1,19 @@
-import React, {Component} from 'react'
-import SongCard from './SongCard'
+import React, {Component} from 'react';
+import SongCard from './SongCard';
+import cdimage from '../assets/cdimage.png';
 
 class PlaylistContainer extends Component {
   render(){
     return(
-      <div>
-        <h1>Mood: {this.props.mood}</h1>
-        <h2>Genre: {this.props.genre}</h2>
+      <div className="playlistcontainer">
+        <div className="playlisttitle">
+        <img className="cdimage" src={cdimage} />      
+          Mood: {this.props.mood} &emsp;
+          Genre: {this.props.genre}
+        </div>
         {this.props.songs.map(song =>
-         <SongCard song={song} />)}
+         <SongCard song={song} />
+         )}
       </div>
     )
   }

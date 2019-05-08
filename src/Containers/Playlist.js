@@ -72,7 +72,8 @@ class Playlist extends React.Component {
     render() {
         return (
             <div>
-              <h1>PlayList</h1>
+              <br></br>
+              <br></br>
               <SongForm handleSubmit={this.handleSubmit}/>
               <SongSearch handleChange={this.handleChange} />
               <PlaylistContainer mood={this.state.theme.mood} genre={this.state.theme.genre} songs={this.state.filteredSongs}/>

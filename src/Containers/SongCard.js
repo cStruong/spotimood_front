@@ -3,9 +3,13 @@ import React from 'react'
 const SongCard = props => {
     return(
       <div className="songcard"> 
-        {props.song.title}&nbsp;
-        {props.song.artist}&nbsp;
-        <iframe width="560" height="315" src={props.song.url} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  <br></br>
+        <div className="cardinfo">
+        <p>Title: {props.song.title}</p>
+        <p>Artist: {props.song.artist}</p>
+        </div>
+        <div className="videos">
+        <iframe width="250" height="150" src={props.song.url} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  <br></br>
+        </div>
       </div>
     )
   }
