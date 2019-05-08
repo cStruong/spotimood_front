@@ -9,14 +9,180 @@ body {background-color: black;}
   background-repeat: no-repeat;
   background-position: left;
   color: white;
-  margin: 15px;
+  margin: 1px;
 }
 
-.themecard {
+/* .themecard {
   background-color: white;
 
+} */
+
+/* .themeform {
+  float: left;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.column {
+  float: left;
+  padding: 10px;
+  height: 550px;
 }
 
+.left {
+  width: 25%;
+}
+
+
+.right {
+  width: 75%;
+  background-image: url("./assets/homebackground.png");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 .profilepic {
   background-color: white;
@@ -28,31 +194,48 @@ body {background-color: black;}
 /* Create two unequal columns that floats next to each other */
 .appcolumn {
   padding: 10px;
-  box-sizing: border-box;
-  background-color: #232b2b;
-  color: white;
+  /* box-sizing: border-box; */
+  /* background-color: black; */
+  /* color: white; */
 }
-
+/*
 .left {
   float: left;
   width: 30%;
   margin-left: 15px;
   color: white;
-}
+} */
 
 h1 {
   color: white;
+  font: 200 35px/1.5 Helvetica, Verdana, sans-serif;
+  font-weight: bold;
+  text-align: center;
 }
 
+label {
+  color: white;
+  font: 200 17px/1.5 Helvetica, Verdana, sans-serif;
+}
+.button1 {
+  border-radius: 8px;
+  width: 90px;
+}
+
+.songformfield {
+  border-radius: 8px;
+}
+/*
 .right {
   float: right;
   width: 65%;
   margin-right: 15px;
   color: white;
-}
+} */
 
 .themeform {
-  color: white
+  color: white;
+  text-align: center;
 }
 
 .songcard {
@@ -73,6 +256,39 @@ h1 {
 
 .searchform {
   text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  font: 200 30px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+li:last-child {
+  border: none;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 200px;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+li a:hover {
+  font-size: 40px;
+  background: rgba(34, 73, 72, 0.59);
 }
 /* Clear floats after the columns */
 /* .row:after {

@@ -16,13 +16,13 @@ class NewThemeForm extends React.Component {
 
     render() {
         return (
-                <div class="form-style-2">
-                <div class="form-style-2-heading">Make a New Playlist</div>
-                <form className="themeform" onSubmit={(event) => {this.props.onSubmitHandler(event, this.state)}}>
-                    <label for="field1">Title:</label>
-                    <input onChange={this.onChangeHandler} type="textfield" name="title" value={this.state.title}/>
-                    <label >Mood:</label>
-                    <select onChange={this.onChangeHandler} name="mood" value={this.state.mood}>
+            <div className="themeform">
+                <h1>New Playlist</h1>
+                <form onSubmit={(event) => {this.props.onSubmitHandler(event, this.state)}}>
+                    <label>Title:</label><br></br>
+                    <input onChange={this.onChangeHandler} type="textfield" className="songformfield" name="title" value={this.state.title}/><br></br>
+                    <br></br><label>Mood:</label><br></br>
+                    <select onChange={this.onChangeHandler} name="mood" value={this.state.mood}><br></br>
                         <option>Choose a Mood</option>
                         <option value="Happy">Happy</option>
                         <option value="Sad">Sad</option>
@@ -30,15 +30,15 @@ class NewThemeForm extends React.Component {
                         <option value="Angry">Angry</option>
                         <option value="Relaxed">Relaxed</option>
                     </select>
-                    <label>Genre:</label>
-                    <select onChange={this.onChangeHandler} name="genre" value={this.state.genre}>
+                    <br></br><br></br><label>Genre:</label>
+                    <br></br><select onChange={this.onChangeHandler} name="genre" value={this.state.genre}>
                         <option>Choose a Genre</option>
                         <option value="Country">Country</option>
                         <option value="Hip hop">Hip hop</option>
                         <option value="Pop">Pop</option>
                         <option value="Rock">Rock</option>
                     </select>
-                    <button type="submit">Submit</button>
+                    <br></br><br></br><button className="button1" type="submit">Submit</button>
                 </form>
             </div>
         );

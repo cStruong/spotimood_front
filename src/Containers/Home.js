@@ -82,15 +82,14 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
+            <div class="row">
+                <div class="column left">
+                    <NewThemeForm onSubmitHandler={this.onSubmitHandler}/>
 
-                    <Themelist onHandleClick={this.props.onHandleClick} themes={this.state.themes}/>
                 </div>
 
-                <div>
-            
-                    <NewThemeForm onSubmitHandler={this.onSubmitHandler}/>
+                <div class="column right">
+                    <Themelist onHandleClick={this.props.onHandleClick} themes={this.state.themes}/>
                 </div>
             </div>
         )
