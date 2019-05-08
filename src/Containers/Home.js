@@ -83,7 +83,7 @@ class Home extends React.Component {
     render() {
         return (
             <div class="row">
-                <div class="column left">
+                <div class="column left" id="leftborder">
                     <NewThemeForm onSubmitHandler={this.onSubmitHandler}/>
 
                 </div>

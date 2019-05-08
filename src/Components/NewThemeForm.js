@@ -22,7 +22,7 @@ class NewThemeForm extends React.Component {
                     <label>Title:</label><br></br>
                     <input onChange={this.onChangeHandler} type="textfield" className="songformfield" name="title" value={this.state.title}/><br></br>
                     <br></br><label>Mood:</label><br></br>
-                    <select onChange={this.onChangeHandler} name="mood" value={this.state.mood}><br></br>
+                    <select onChange={this.onChangeHandler}  name="mood" value={this.state.mood}><br></br>
                         <option>Choose a Mood</option>
                         <option value="Happy">Happy</option>
                         <option value="Sad">Sad</option>
